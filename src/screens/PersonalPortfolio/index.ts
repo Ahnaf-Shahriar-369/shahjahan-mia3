@@ -1,0 +1,1 @@
+export { PersonalPortfolio } from "./PersonalPortfolio";
