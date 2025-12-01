@@ -14,7 +14,7 @@ export const HeroSection = (): JSX.Element => {
               <div className="inline-flex flex-col items-start">
                 <div className="flex flex-col items-start gap-2.5 px-0 py-2.5">
                   <h1 className="[font-family:'Raleway',Helvetica] font-extrabold text-white text-[44px] tracking-[0] leading-[normal]">
-                    Your Name Here
+                    Md. Shahjahan Miah
                   </h1>
                 </div>
               </div>

@@ -122,7 +122,7 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
   // =========================================================================
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black group">
+    <div id="home" className="relative w-full h-screen overflow-hidden bg-black group">
       {/* ===================================================================
           BACKGROUND LAYER
           - Image for paused state
@@ -261,7 +261,7 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
                   mt-8 sm:mt-10
                 `}
               >
-                Shahjahan Mia
+                Md. Shahjahan Miah
               </h1>
 
               {/* Rotating text with translucent background */}
@@ -306,7 +306,7 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
                   focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black
                   overflow-hidden rounded-full tracking-wide
                 `}
-              aria-label="Contact Shahjahan Mia"
+              aria-label="Contact Md. Shahjahan Miah"
             >
               {/* Button text with animated arrow */}
               <span className="relative z-10 inline-flex items-center gap-2 transition-all duration-300 uppercase">

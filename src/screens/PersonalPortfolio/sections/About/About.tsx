@@ -48,7 +48,7 @@ export default function About() {
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-gray-400/50 group-hover:scale-105 transition-all duration-500 bg-white">
               <img
                 src="/bg.png"
-                alt="Md. Shahjahan Mia"
+                alt="Md. Shahjahan Miah"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -62,7 +62,7 @@ export default function About() {
           {/* Name and Title */}
           <div className="text-center space-y-3">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">
-              Md. Shahjahan Mia
+              Md. Shahjahan Miah
             </h1>
             <div className="flex items-center justify-center gap-3">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-gray-400"></div>
@@ -81,7 +81,7 @@ export default function About() {
             {/* Subtle shadow effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
-            <div className="relative bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 sm:p-10 transition-all duration-500 hover:border-white/30 hover:shadow-2xl hover:shadow-white/20">
+            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-2xl p-8 sm:p-10 shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/40 hover:shadow-2xl hover:shadow-white/20">
               <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
               <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
 
@@ -90,7 +90,7 @@ export default function About() {
                 About
               </h2>
               <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                Md. Shahjahan Mia is a visionary Bangladeshi entrepreneur and community contributor, widely respected as one of the founders of X Madrasha and the Founder of Brother's Corporation, a well-recognized business house across Tangail. Through his leadership, Shahjahan Mia has established himself as a pioneer in the building materials trade and a trusted partner in the region's development sector.
+                Md. Shahjahan Miah is a visionary Bangladeshi entrepreneur and community contributor, widely respected as one of the founders of Alhab Abdul Khalek Nurania Madrasha and the Founder of Brother's Corporation, a well-recognized business house across Tangail. Through his leadership, Md. Shahjahan Miah has established himself as a pioneer in the building materials trade and a trusted partner in the region's development sector.
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function About() {
           <div className="group relative">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
-            <div className="relative bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 sm:p-10 transition-all duration-500 hover:border-white/30 hover:shadow-2xl hover:shadow-white/20 h-full">
+            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-2xl p-8 sm:p-10 shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/40 hover:shadow-2xl hover:shadow-white/20 h-full">
               <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
               <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
 
@@ -117,7 +117,7 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
                   <p className="text-white/90 text-base sm:text-lg">
-                    Founded by Md. Shahjahan Mia, Brother's Corporation has grown into a household name in Tangail.
+                    Founded by Md. Shahjahan Miah, Brother's Corporation has grown into a household name in Tangail.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -141,7 +141,7 @@ export default function About() {
           ].map((label, index) => (
             <div
               key={index}
-              className="group relative bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl p-6 text-center transition-all duration-500 hover:border-white/40 hover:scale-105 hover:shadow-xl hover:shadow-white/30"
+              className="group relative backdrop-blur-sm border-2 border-white/30 rounded-xl p-6 text-center shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/50 hover:scale-105 hover:shadow-xl hover:shadow-white/30"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-xl"></div>

@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 // import { HeroSection } from "./sections/HeroSection"
 // import { PortfolioSection } from "./sections/PortfolioSection"
 // import { TestimonialsSection } from "./sections/TestimonialsSection"
-import { Twitter, Linkedin, Menu, X, } from "lucide-react"
+import { Twitter, Linkedin, Menu, X, Mail } from "lucide-react"
 import { IoLogoWhatsapp } from "react-icons/io";
 import Hero from "./sections/Home/Home";
 import About from "./sections/About/About";
@@ -24,6 +24,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
   { icon: IoLogoWhatsapp, href: "https://wa.me/01324441230", label: "WhatsApp" },
+  { icon: Mail, href: "mailto:brotherscorporationtangail@yahoo.com", label: "Email" },
 ]
 
 export const PersonalPortfolio = () => {
