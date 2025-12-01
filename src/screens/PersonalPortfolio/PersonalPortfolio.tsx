@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+// Import animations in your main app or index file instead
 // import { CaseStudiesSection } from "./sections/CaseStudiesSection"
 // import { ContactSection } from "./sections/ContactSection"
 // import { HeroSection } from "./sections/HeroSection"
@@ -23,6 +24,33 @@ export const PersonalPortfolio = () => {
 
   // Logo scroll effect
   const [scrollY, setScrollY] = useState(0)
+
+  // Scroll reveal effect
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed')
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    // Observe all sections
+    const sections = document.querySelectorAll('.section-reveal')
+    sections.forEach((section) => observer.observe(section))
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section))
+    }
+  }, [isLoading])
 
   useEffect(() => {
     const assets = ["/201.png", "/tang.mp4", "/tang.webm", "/mia.png", "/mia-s.png"]
@@ -97,22 +125,22 @@ export const PersonalPortfolio = () => {
         </div>
 
         {/* About Section */}
-        <div className="w-full">
+        <div className="w-full section-reveal">
           <About />
         </div>
 
         {/* Dealerships Section */}
-        <div className="w-full">
+        <div className="w-full section-reveal">
           <Dealerships />
         </div>
 
         {/* Others Section */}
-        <div className="w-full">
+        <div className="w-full section-reveal">
           <Others />
         </div>
 
         {/* Contact Section */}
-        <div className="w-full">
+        <div className="w-full section-reveal">
           <Contact />
         </div>
 

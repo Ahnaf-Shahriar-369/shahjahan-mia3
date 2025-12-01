@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { MessageCircle } from "lucide-react"
+import { IoLogoWhatsapp } from "react-icons/io"
 import MilestoneCard from "./MilestoneCard"
 
 export default function Others() {
@@ -169,40 +169,39 @@ export default function Others() {
                                 {card.isWhatsApp ? (
                                     <div
                                         onClick={handleWhatsAppClick}
-                                        className="group relative ml-8 cursor-pointer"
+                                        className="group/whatsapp relative ml-8 cursor-pointer"
                                     >
                                         {/* Glow effect */}
-                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-200 via-emerald-200 to-blue-200 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-2xl blur opacity-40 group-hover/whatsapp:opacity-60 transition duration-500"></div>
 
                                         {/* Main card */}
-                                        <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-2xl p-6 sm:p-8 shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/40 hover:shadow-2xl hover:shadow-white/20 bg-gradient-to-br from-white/5 to-white/0 hover:scale-105 active:scale-95">
-                                            {/* Decorative corners */}
-                                            <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
-                                            <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
-
-                                            <h3 className="text-xl md:text-2xl font-bold text-white mb-4 text-center font-['Inter',sans-serif] drop-shadow-lg">
-                                                My WhatsApp
-                                            </h3>
-                                            <p className="text-white/90 text-sm md:text-base leading-relaxed text-center mb-6 font-['Inter',sans-serif] font-medium drop-shadow-md">
-                                                Contact me through WhatsApp to get high quality construction materials, in all over Tangail
-                                            </p>
-
-                                            <div className="flex items-center justify-center space-x-4 mb-4">
-                                                <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-12">
-                                                    <MessageCircle className="w-8 h-8 text-white" />
+                                        <div className="relative backdrop-blur-sm border-2 border-white/40 rounded-2xl p-8 sm:p-10 shadow-xl transition-all duration-500 hover:border-white/60 hover:shadow-2xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 hover:scale-105 active:scale-95">
+                                            <div className="text-center">
+                                                <div className="flex justify-center mb-6">
+                                                    <div className="bg-white/30 p-6 rounded-full group-hover/whatsapp:bg-white/40 transition-all duration-300 group-hover/whatsapp:rotate-12">
+                                                        <IoLogoWhatsapp className="w-16 h-16 text-white" />
+                                                    </div>
                                                 </div>
-                                                <div className="text-center">
-                                                    <p className="text-white/80 text-sm font-medium mb-1 font-['Inter',sans-serif]">Call or Message</p>
-                                                    <p className="text-white text-xl md:text-2xl font-bold tracking-wide font-['Inter',sans-serif] drop-shadow-lg">
-                                                        {whatsappNumber}
+
+                                                <h4 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-['Inter',sans-serif] drop-shadow-lg">
+                                                    Message Us on WhatsApp
+                                                </h4>
+
+                                                <p className="text-white/90 text-base sm:text-lg mb-6 font-['Inter',sans-serif] font-medium drop-shadow-md">
+                                                    Get instant quotes and answers to your construction material needs
+                                                </p>
+
+                                                <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-6 py-3 inline-block group-hover/whatsapp:bg-white/30 transition-all duration-300">
+                                                    <p className="text-white text-xl font-bold font-['Inter',sans-serif] drop-shadow-lg">
+                                                        +880 1324441230
                                                     </p>
                                                 </div>
-                                            </div>
 
-                                            <div className="text-center">
-                                                <span className="inline-block bg-white/10 text-white/70 text-xs px-3 py-1 rounded-full group-hover:bg-white/20 transition-all duration-300 font-['Inter',sans-serif]">
-                                                    Tap to open WhatsApp
-                                                </span>
+                                                <div className="mt-6">
+                                                    <span className="inline-block bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full group-hover/whatsapp:bg-white/20 transition-all duration-300 font-['Inter',sans-serif]">
+                                                        Click to start chat →
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

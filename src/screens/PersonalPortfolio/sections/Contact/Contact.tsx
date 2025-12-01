@@ -1,7 +1,6 @@
 "use client"
 
 import { Phone, Mail, MapPin, Building2 } from "lucide-react"
-import { IoLogoWhatsapp } from "react-icons/io"
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
 
 export default function Contact() {
@@ -18,10 +17,6 @@ export default function Contact() {
         "01324441262",
         "01324441263"
     ]
-
-    const handleWhatsAppClick = () => {
-        window.open("https://wa.me/8801324441230", "_blank")
-    }
 
     const handleEmailClick = () => {
         window.location.href = "mailto:brotherscorporationtangail@yahoo.com"
@@ -174,44 +169,6 @@ export default function Contact() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* WhatsApp CTA - Full Width */}
-                    <div
-                        onClick={handleWhatsAppClick}
-                        className="group/whatsapp relative cursor-pointer"
-                    >
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-2xl blur opacity-40 group-hover/whatsapp:opacity-60 transition duration-500"></div>
-
-                        <div className="relative backdrop-blur-sm border-2 border-white/40 rounded-2xl p-8 sm:p-10 shadow-xl transition-all duration-500 hover:border-white/60 hover:shadow-2xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 hover:scale-[1.02] active:scale-[0.98]">
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                                <div className="flex items-center gap-6">
-                                    <div className="bg-white/30 p-5 rounded-full group-hover/whatsapp:bg-white/40 transition-all duration-300 group-hover/whatsapp:rotate-12">
-                                        <IoLogoWhatsapp className="w-12 h-12 text-white" />
-                                    </div>
-
-                                    <div className="text-center sm:text-left">
-                                        <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 font-['Inter',sans-serif] drop-shadow-lg">
-                                            Message Us on WhatsApp
-                                        </h4>
-                                        <p className="text-white/90 text-sm sm:text-base font-['Inter',sans-serif] font-medium drop-shadow-md">
-                                            Get instant quotes and answers to your construction material needs
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-col items-center sm:items-end gap-3">
-                                    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-6 py-3 group-hover/whatsapp:bg-white/30 transition-all duration-300">
-                                        <p className="text-white text-lg sm:text-xl font-bold font-['Inter',sans-serif] drop-shadow-lg">
-                                            01324441230
-                                        </p>
-                                    </div>
-                                    <span className="text-white/80 text-sm font-['Inter',sans-serif]">
-                                        Click to start chat →
-                                    </span>
                                 </div>
                             </div>
                         </div>
