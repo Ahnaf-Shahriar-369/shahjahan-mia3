@@ -115,7 +115,7 @@ export default function Dealerships() {
     }
 
     return (
-        <div id="dealerships" className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 overflow-hidden">
+        <div id="dealerships" className="isolate relative w-full min-h-screen py-16 sm:py-20 md:py-24 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <img
