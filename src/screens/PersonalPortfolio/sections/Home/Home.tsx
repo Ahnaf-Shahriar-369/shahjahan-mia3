@@ -26,7 +26,7 @@ import { useEffect, useRef, useState } from "react"
 // ============================================================================
 
 const HERO_CONFIG = {
-  bgImage: "/201.png",
+  bgImage: "/tang1.png",
   videoSource: "/tang.mp4",
   videoSourceMp4: "/tang.mp4",
   altText: "Premium Bay Area real estate hero background",
@@ -110,8 +110,11 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
   }
 
   const handleLearnMoreClick = () => {
-    // Add your navigation or scroll logic here
-    console.log("[Hero] Learn More clicked")
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   // Prevent render before hydration

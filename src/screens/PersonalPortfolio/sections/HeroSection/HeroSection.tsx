@@ -3,7 +3,14 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 
 export const HeroSection = (): JSX.Element => {
-  const clientLogos = [{ src: "/clients-logos.svg", alt: "Client logos" }];
+  const clientLogos = [
+    { src: "/SVG/heidelberg.svg", alt: "Heidelberg" },
+    { src: "/SVG/LafargeHolcim.svg", alt: "LafargeHolcim" },
+    { src: "/SVG/sevenr-rings.svg", alt: "Seven Rings" },
+    { src: "/SVG/madina.svg", alt: "Madina" },
+    { src: "/SVG/seven-horse.svg", alt: "Seven Horse" },
+    { src: "/SVG/bsrm.svg", alt: "BSRM" },
+  ];
 
   return (
     <header className="relative w-full bg-[#080808] py-[150px]">
@@ -41,11 +48,11 @@ export const HeroSection = (): JSX.Element => {
               </p>
             </div>
 
-            <div className="w-full">
+            <div className="w-full flex flex-wrap gap-6 items-center">
               {clientLogos.map((logo, index) => (
                 <img
                   key={index}
-                  className="w-full max-w-[920px] h-[60px]"
+                  className="h-[40px] w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                   alt={logo.alt}
                   src={logo.src}
                 />

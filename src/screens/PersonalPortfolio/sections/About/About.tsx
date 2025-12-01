@@ -8,7 +8,7 @@ export default function About() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/tang1.png"
+          src="/tang2.png"
           alt="Background"
           className="w-full h-full object-cover object-center"
           style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -85,11 +85,11 @@ export default function About() {
               <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
               <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
 
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3 font-['Inter',sans-serif] drop-shadow-lg">
                 <span className="w-1 h-8 bg-gradient-to-b from-white to-transparent"></span>
                 About
               </h2>
-              <p className="text-white/90 text-base sm:text-lg leading-relaxed">
+              <p className="text-white text-base sm:text-lg leading-relaxed font-['Inter',sans-serif] font-medium drop-shadow-md">
                 Md. Shahjahan Miah is a visionary Bangladeshi entrepreneur and community contributor, widely respected as one of the founders of Alhab Abdul Khalek Nurania Madrasha and the Founder of Brother's Corporation, a well-recognized business house across Tangail. Through his leadership, Md. Shahjahan Miah has established himself as a pioneer in the building materials trade and a trusted partner in the region's development sector.
               </p>
             </div>
@@ -103,26 +103,26 @@ export default function About() {
               <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
               <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
 
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3 font-['Inter',sans-serif] drop-shadow-lg">
                 <span className="w-1 h-8 bg-gradient-to-b from-white to-transparent"></span>
                 Founder & Leadership
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-white/90 text-base sm:text-lg">
-                    <span className="text-white font-semibold">Brother's Corporation</span>
+                  <p className="text-white text-base sm:text-lg font-['Inter',sans-serif] font-medium drop-shadow-md">
+                    <span className="text-white font-bold drop-shadow-lg">Brother's Corporation</span>
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-white/90 text-base sm:text-lg">
+                  <p className="text-white text-base sm:text-lg font-['Inter',sans-serif] font-medium drop-shadow-md">
                     Founded by Md. Shahjahan Miah, Brother's Corporation has grown into a household name in Tangail.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-white/90 text-base sm:text-lg">
+                  <p className="text-white text-base sm:text-lg font-['Inter',sans-serif] font-medium drop-shadow-md">
                     Best known for robust dealership operations in cement and steel, representing the most reputed brands in Bangladesh.
                   </p>
                 </div>

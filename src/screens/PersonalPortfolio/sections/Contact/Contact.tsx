@@ -1,0 +1,270 @@
+"use client"
+
+import { Phone, Mail, MapPin, Building2 } from "lucide-react"
+import { IoLogoWhatsapp } from "react-icons/io"
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
+
+export default function Contact() {
+    const headOfficePhones = [
+        "01324441230",
+        "01324441231",
+        "01324441232",
+        "01324441233",
+        "01324441234"
+    ]
+
+    const salesCenterPhones = [
+        "01324441261",
+        "01324441262",
+        "01324441263"
+    ]
+
+    const handleWhatsAppClick = () => {
+        window.open("https://wa.me/8801324441230", "_blank")
+    }
+
+    const handleEmailClick = () => {
+        window.location.href = "mailto:brotherscorporationtangail@yahoo.com"
+    }
+
+    return (
+        <section id="contact" className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 overflow-hidden flex items-center">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+                <img
+                    src="/tang1.png"
+                    alt="Background"
+                    className="w-full h-full object-cover object-center"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/50"></div>
+            </div>
+
+            {/* Animated background elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {/* Gradient orbs */}
+                <div className="absolute top-20 right-10 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div className="absolute bottom-20 left-10 w-72 h-72 bg-emerald-100/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }}></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto w-full">
+                {/* Header */}
+                <div className="text-center mb-12 sm:mb-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-['Inter',sans-serif] drop-shadow-lg">
+                        Get In Touch
+                    </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-white font-['Inter',sans-serif] font-medium drop-shadow-md max-w-3xl mx-auto">
+                        Ready to start your construction project? Contact us today
+                    </p>
+                </div>
+
+                {/* Main Contact Container */}
+                <div className="space-y-8">
+                    {/* Two Locations Side by Side */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                        {/* Head Office */}
+                        <div className="group relative">
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-200 via-blue-200 to-purple-200 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+
+                            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-2xl p-6 sm:p-8 shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/40 hover:shadow-2xl hover:shadow-white/20 bg-gradient-to-br from-white/10 to-white/5 h-full">
+                                {/* Decorative corners */}
+                                <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
+                                <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
+
+                                <div className="space-y-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-white/20 p-3 rounded-full">
+                                            <Building2 className="w-6 h-6 text-white" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white font-['Inter',sans-serif] drop-shadow-lg">
+                                            Head Office
+                                        </h3>
+                                    </div>
+
+                                    {/* Location */}
+                                    <div className="flex items-start gap-3">
+                                        <MapPin className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
+                                        <div>
+                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Location</p>
+                                            <p className="text-white text-lg font-bold font-['Inter',sans-serif] drop-shadow-lg">Mosjid Road, Tangail</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Email */}
+                                    <a
+                                        href="mailto:brotherscorporationtangail@yahoo.com"
+                                        onClick={handleEmailClick}
+                                        className="flex items-start gap-3 group/item cursor-pointer transform transition-all duration-300 hover:translate-x-2"
+                                    >
+                                        <Mail className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
+                                        <div>
+                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Email</p>
+                                            <p className="text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg break-all">brotherscorporationtangail@yahoo.com</p>
+                                        </div>
+                                    </a>
+
+                                    {/* Phone Numbers */}
+                                    <div className="flex items-start gap-3">
+                                        <Phone className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
+                                        <div className="flex-1">
+                                            <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
+                                            <div className="space-y-1.5">
+                                                {headOfficePhones.map((phone, index) => (
+                                                    <a
+                                                        key={phone}
+                                                        href={`tel:+88${phone}`}
+                                                        className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
+                                                    >
+                                                        {index === 0 && <span className="text-emerald-300 text-xs mr-2">(Primary)</span>}
+                                                        {phone}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Sales Center Jamalpur */}
+                        <div className="group relative">
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-200 via-pink-200 to-blue-200 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+
+                            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-2xl p-6 sm:p-8 shadow-lg shadow-white/10 transition-all duration-500 hover:border-white/40 hover:shadow-2xl hover:shadow-white/20 bg-gradient-to-br from-white/10 to-white/5 h-full">
+                                {/* Decorative corners */}
+                                <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/30"></div>
+                                <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/30"></div>
+
+                                <div className="space-y-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-white/20 p-3 rounded-full">
+                                            <Building2 className="w-6 h-6 text-white" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white font-['Inter',sans-serif] drop-shadow-lg">
+                                            Sales Center Jamalpur
+                                        </h3>
+                                    </div>
+
+                                    {/* Location */}
+                                    <div className="flex items-start gap-3">
+                                        <MapPin className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
+                                        <div>
+                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Location</p>
+                                            <p className="text-white text-lg font-bold font-['Inter',sans-serif] drop-shadow-lg">Jamalpur Sadar, Jamalpur</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Phone Numbers */}
+                                    <div className="flex items-start gap-3">
+                                        <Phone className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
+                                        <div className="flex-1">
+                                            <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
+                                            <div className="space-y-1.5">
+                                                {salesCenterPhones.map((phone, index) => (
+                                                    <a
+                                                        key={phone}
+                                                        href={`tel:+88${phone}`}
+                                                        className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
+                                                    >
+                                                        {index === 0 && <span className="text-emerald-300 text-xs mr-2">(Primary)</span>}
+                                                        {phone}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* WhatsApp CTA - Full Width */}
+                    <div
+                        onClick={handleWhatsAppClick}
+                        className="group/whatsapp relative cursor-pointer"
+                    >
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-2xl blur opacity-40 group-hover/whatsapp:opacity-60 transition duration-500"></div>
+
+                        <div className="relative backdrop-blur-sm border-2 border-white/40 rounded-2xl p-8 sm:p-10 shadow-xl transition-all duration-500 hover:border-white/60 hover:shadow-2xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 hover:scale-[1.02] active:scale-[0.98]">
+                            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                                <div className="flex items-center gap-6">
+                                    <div className="bg-white/30 p-5 rounded-full group-hover/whatsapp:bg-white/40 transition-all duration-300 group-hover/whatsapp:rotate-12">
+                                        <IoLogoWhatsapp className="w-12 h-12 text-white" />
+                                    </div>
+
+                                    <div className="text-center sm:text-left">
+                                        <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 font-['Inter',sans-serif] drop-shadow-lg">
+                                            Message Us on WhatsApp
+                                        </h4>
+                                        <p className="text-white/90 text-sm sm:text-base font-['Inter',sans-serif] font-medium drop-shadow-md">
+                                            Get instant quotes and answers to your construction material needs
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col items-center sm:items-end gap-3">
+                                    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-6 py-3 group-hover/whatsapp:bg-white/30 transition-all duration-300">
+                                        <p className="text-white text-lg sm:text-xl font-bold font-['Inter',sans-serif] drop-shadow-lg">
+                                            01324441230
+                                        </p>
+                                    </div>
+                                    <span className="text-white/80 text-sm font-['Inter',sans-serif]">
+                                        Click to start chat →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-4 pt-4">
+                        <a
+                            href="https://facebook.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
+                        >
+                            <FaFacebook className="w-6 h-6 text-white" />
+                        </a>
+                        <a
+                            href="https://twitter.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
+                        >
+                            <FaTwitter className="w-6 h-6 text-white" />
+                        </a>
+                        <a
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
+                        >
+                            <FaLinkedin className="w-6 h-6 text-white" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom decorative line */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+
+            {/* Custom animations */}
+            <style>{`
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 0.4;
+          }
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+      `}</style>
+        </section>
+    )
+}
