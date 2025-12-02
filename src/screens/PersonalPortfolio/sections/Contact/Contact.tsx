@@ -104,13 +104,12 @@ export default function Contact() {
                                         <div className="flex-1">
                                             <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
                                             <div className="space-y-1.5">
-                                                {headOfficePhones.map((phone, index) => (
+                                                {headOfficePhones.map((phone) => (
                                                     <a
                                                         key={phone}
                                                         href={`tel:+88${phone}`}
                                                         className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
                                                     >
-                                                        {index === 0 && <span className="text-emerald-300 text-xs mr-2">(Primary)</span>}
                                                         {phone}
                                                     </a>
                                                 ))}
@@ -155,13 +154,12 @@ export default function Contact() {
                                         <div className="flex-1">
                                             <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
                                             <div className="space-y-1.5">
-                                                {salesCenterPhones.map((phone, index) => (
+                                                {salesCenterPhones.map((phone) => (
                                                     <a
                                                         key={phone}
                                                         href={`tel:+88${phone}`}
                                                         className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
                                                     >
-                                                        {index === 0 && <span className="text-emerald-300 text-xs mr-2">(Primary)</span>}
                                                         {phone}
                                                     </a>
                                                 ))}
