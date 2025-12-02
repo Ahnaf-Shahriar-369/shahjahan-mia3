@@ -1,7 +1,6 @@
 "use client"
 
 import { Phone, Mail, MapPin, Building2 } from "lucide-react"
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
 
 export default function Contact() {
     const headOfficePhones = [
@@ -173,39 +172,8 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Social Links */}
-                    <div className="flex justify-center gap-4 pt-4">
-                        <a
-                            href="https://facebook.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
-                        >
-                            <FaFacebook className="w-6 h-6 text-white" />
-                        </a>
-                        <a
-                            href="https://twitter.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
-                        >
-                            <FaTwitter className="w-6 h-6 text-white" />
-                        </a>
-                        <a
-                            href="https://linkedin.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95 border border-white/20"
-                        >
-                            <FaLinkedin className="w-6 h-6 text-white" />
-                        </a>
-                    </div>
                 </div>
             </div>
-
-            {/* Bottom decorative line */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
 
             {/* Custom animations */}
             <style>{`
