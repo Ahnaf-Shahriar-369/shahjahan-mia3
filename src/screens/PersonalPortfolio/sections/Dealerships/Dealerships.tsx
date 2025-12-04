@@ -51,23 +51,28 @@ const dealerships = [
 const brandHierarchy = [
     {
         parent: "Heidelberg Materials Bangladesh PLC",
-        child: "Scan Cement"
+        child: "Scan Cement",
+        mergerYear: 2001
     },
     {
         parent: "Lafarge Holcim Bangladesh PLC",
-        child: "Holcim"
+        child: "Holcim",
+        mergerYear: 2001
     },
     {
         parent: "Shun Shing Group",
-        child: "Seven Ring"
+        child: "Seven Ring",
+        mergerYear: 2005
     },
     {
         parent: "Eastern Cement Industries Ltd (ECIL)",
-        child: "Seven Horse Cement"
+        child: "Seven Horse Cement",
+        mergerYear: 2015
     },
     {
         parent: "Madina Cement Industries Ltd",
-        child: "Three Ring Tiger Cement"
+        child: "Three Ring Tiger Cement",
+        mergerYear: 2022
     }
 ]
 
@@ -269,12 +274,18 @@ export default function Dealerships() {
                                         </div>
                                     </div>
 
-                                    {/* Arrow Connector */}
-                                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-white/40">
-                                        <div className="w-px h-8 bg-gradient-to-b from-white/20 via-white/50 to-white/20"></div>
-                                        <svg className="w-4 h-4 mt-1 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    {/* Arrow Connector with Merger Year */}
+                                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+                                        <div className="w-px h-4 bg-gradient-to-b from-white/20 via-white/50 to-white/20"></div>
+                                        <svg className="w-4 h-4 mt-1 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                                         </svg>
+                                        {/* Merger Year Badge */}
+                                        <div className="mt-2 px-3 py-1 bg-gradient-to-r from-amber-500/80 to-orange-500/80 backdrop-blur-md rounded-full border border-amber-300/50 shadow-lg">
+                                            <div className="text-white font-['Inter',sans-serif] font-bold text-xs tracking-wider">
+                                                {item.mergerYear}
+                                            </div>
+                                        </div>
                                     </div>
 
                                     {/* Child */}
