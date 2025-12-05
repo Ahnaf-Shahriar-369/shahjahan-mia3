@@ -104,8 +104,8 @@ export const PersonalPortfolio = () => {
           <div className="flex flex-col items-center gap-4 px-6">
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-white/5 animate-pulse-slow" />
-              <div className="relative w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                <img src="/mia-s.png" alt="loader logo" className="w-20 h-20 rounded-full object-cover drop-shadow-xl transform transition-transform duration-700 animate-scaleUp" />
+              <div className="relative w-40 h-40 rounded-full overflow-hidden flex items-center justify-center">
+                <img src="/mia-s.png" alt="loader logo" className="w-36 h-36 rounded-full object-cover drop-shadow-xl transform transition-transform duration-700 animate-scaleUp" />
               </div>
               <div className="absolute -inset-3 rounded-full border border-white/20 animate-spin-slow" />
             </div>
@@ -163,7 +163,7 @@ export const PersonalPortfolio = () => {
 
       <footer className="w-full bg-[#1a1a1a] h-[70px] flex items-center justify-center">
         <div className="[font-family:'IBM_Plex_Mono',Helvetica] font-normal text-[#9c9c9c] text-sm text-center tracking-[0.14px] leading-[normal]">
-          Made with ❤ by @Ahnaf Shahriar
+          @2025 all rights reserved
         </div>
       </footer>
 

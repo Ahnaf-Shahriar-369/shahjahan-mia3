@@ -90,7 +90,7 @@ export default function About() {
                 About
               </h2>
               <p className="text-white text-base sm:text-lg leading-relaxed font-['Inter',sans-serif] font-medium drop-shadow-md">
-                Md. Shahjahan Miah is a visionary Bangladeshi entrepreneur and community contributor, widely respected as one of the founders of Alhab Abdul Khalek Nurania Madrasha and the Founder of Brother's Corporation, a well-recognized business house across Tangail. Through his leadership, Md. Shahjahan Miah has established himself as a pioneer in the building materials trade and a trusted partner in the region's development sector.
+                Md. Shahjahan Miah is a visionary Bangladeshi entrepreneur and community contributor, widely respected as one of the founders of Alhaj Abdul Khalek Nurania Madrasha - atimkhana and the Founder of Brother's Corporation, a well-recognized business house across Tangail. Through his leadership, Md. Shahjahan Miah has established himself as a pioneer in the building materials trade and a trusted partner in the region's development sector.
               </p>
             </div>
           </div>

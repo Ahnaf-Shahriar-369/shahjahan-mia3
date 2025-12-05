@@ -48,33 +48,40 @@ const dealerships = [
     },
 ]
 
+
 const brandHierarchy = [
     {
         parent: "Heidelberg Materials Bangladesh PLC",
         child: "Scan Cement",
+        childLogo: "/scan-cement.png",
         mergerYear: 2001
     },
     {
         parent: "Lafarge Holcim Bangladesh PLC",
         child: "Holcim",
+        childLogo: "/holicm-cement.png",
         mergerYear: 2001
     },
     {
         parent: "Shun Shing Group",
         child: "Seven Ring",
+        childLogo: "/three-ring.png",
         mergerYear: 2005
     },
     {
         parent: "Eastern Cement Industries Ltd (ECIL)",
         child: "Seven Horse Cement",
+        childLogo: "/seven-horse.png",
         mergerYear: 2015
     },
     {
         parent: "Madina Cement Industries Ltd",
         child: "Three Ring Tiger Cement",
+        childLogo: "/tiger-cement.png",
         mergerYear: 2022
     }
 ]
+
 
 export default function Dealerships() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -143,10 +150,10 @@ export default function Dealerships() {
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-['Inter',sans-serif] drop-shadow-lg">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-sans drop-shadow-lg">
                         Our Dealerships
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-white font-['Inter',sans-serif] font-medium drop-shadow-md max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-white font-sans font-medium drop-shadow-md max-w-3xl mx-auto">
                         Partnering with industry-leading brands to provide top-notch building materials across Tangail
                     </p>
                 </div>
@@ -190,18 +197,18 @@ export default function Dealerships() {
 
                                         {/* Category badge */}
                                         <div className="flex justify-center mb-4">
-                                            <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold text-white/90 font-['Inter',sans-serif] tracking-wider">
+                                            <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold text-white/90 font-sans tracking-wider">
                                                 {deal.category}
                                             </span>
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-4 font-['Inter',sans-serif] drop-shadow-lg min-h-[4rem] flex items-center justify-center">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-4 font-sans drop-shadow-lg min-h-[4rem] flex items-center justify-center">
                                             {deal.title}
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-white text-sm sm:text-base leading-relaxed text-center font-['Inter',sans-serif] font-medium drop-shadow-md line-clamp-4">
+                                        <p className="text-white text-sm sm:text-base leading-relaxed text-center font-sans font-medium drop-shadow-md line-clamp-4">
                                             {deal.description}
                                         </p>
                                     </div>
@@ -249,10 +256,10 @@ export default function Dealerships() {
                 {/* Brand Hierarchy Section */}
                 <div className="mt-8 sm:mt-12">
                     <div className="text-center mb-6">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-['Inter',sans-serif] drop-shadow-lg">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans drop-shadow-lg">
                             Brand Hierarchy
                         </h3>
-                        <p className="text-white/80 font-['Inter',sans-serif]">
+                        <p className="text-white/80 font-sans">
                             Parent companies and their respective brands
                         </p>
                     </div>
@@ -261,52 +268,57 @@ export default function Dealerships() {
                         {brandHierarchy.map((item, index) => (
                             <div
                                 key={index}
-                                className="relative group"
+                                className="group relative backdrop-blur-sm border-2 border-white/20 rounded-xl p-6 shadow-lg transition-all duration-300 hover:border-white/40 hover:shadow-xl bg-white/5"
                             >
-                                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-200/20 via-blue-200/20 to-purple-200/20 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                                {/* Parent */}
+                                <div className="text-center">
+                                    <div className="text-xs text-emerald-300 uppercase tracking-wider font-semibold mb-2">Parent Company</div>
+                                    <div className="text-white font-bold text-lg drop-shadow-md">
+                                        {item.parent}
+                                    </div>
+                                </div>
 
-                                <div className="relative backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-white/30 transition-all duration-300 bg-white/5 hover:bg-white/10">
-                                    {/* Parent */}
-                                    <div className="text-center mb-8">
-                                        <div className="text-xs text-emerald-300 uppercase tracking-wider font-semibold mb-2">Parent Company</div>
-                                        <div className="text-white font-['Inter',sans-serif] font-bold text-lg leading-tight">
-                                            {item.parent}
+                                {/* Arrow */}
+                                <div className="flex justify-center my-4">
+                                    <div className="text-white/60 text-2xl">↓</div>
+                                </div>
+
+                                {/* Child */}
+                                <div className="text-center">
+                                    <div className="text-xs text-blue-300 uppercase tracking-wider font-semibold mb-3">Brand</div>
+
+                                    {/* Logo */}
+                                    <div className="flex justify-center mb-3">
+                                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg p-2">
+                                            <img
+                                                src={item.childLogo}
+                                                alt={item.child}
+                                                className="w-full h-full object-contain"
+                                            />
                                         </div>
                                     </div>
 
-                                    {/* Arrow Connector with Merger Year */}
-                                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
-                                        <div className="w-px h-4 bg-gradient-to-b from-white/20 via-white/50 to-white/20"></div>
-                                        <svg className="w-4 h-4 mt-1 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                                        </svg>
-                                        {/* Merger Year Badge */}
-                                        <div className="mt-2 px-3 py-1 bg-gradient-to-r from-amber-500/80 to-orange-500/80 backdrop-blur-md rounded-full border border-amber-300/50 shadow-lg">
-                                            <div className="text-white font-['Inter',sans-serif] font-bold text-xs tracking-wider">
-                                                {item.mergerYear}
-                                            </div>
-                                        </div>
+                                    <div className="text-white font-bold text-xl text-emerald-100 drop-shadow-md">
+                                        {item.child}
                                     </div>
+                                </div>
 
-                                    {/* Child */}
-                                    <div className="text-center mt-8">
-                                        <div className="text-xs text-blue-300 uppercase tracking-wider font-semibold mb-2">Brand</div>
-                                        <div className="text-white font-['Inter',sans-serif] font-bold text-xl text-emerald-100 drop-shadow-md">
-                                            {item.child}
-                                        </div>
-                                    </div>
+                                {/* Merger Year */}
+                                <div className="text-center mt-4 pt-4 border-t border-white/10">
+                                    <div className="text-xs text-purple-300 uppercase tracking-wider font-semibold mb-1">Merger Year</div>
+                                    <div className="text-white/80 font-semibold">{item.mergerYear}</div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Bottom decorative line */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+            < div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent" ></div >
 
             {/* Custom animations */}
-            <style>{`
+            < style > {`
         @keyframes pulse-slow {
           0%, 100% {
             opacity: 0.2;
@@ -319,7 +331,7 @@ export default function Dealerships() {
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;
         }
-      `}</style>
-        </div>
+      `}</style >
+        </div >
     )
 }

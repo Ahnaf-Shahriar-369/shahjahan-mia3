@@ -13,7 +13,7 @@ export const HeroSection = (): JSX.Element => {
   ];
 
   return (
-    <header className="relative w-full bg-[#080808] py-[150px]">
+    <header id="home" className="relative w-full bg-[#080808] pt-[180px] pb-[150px] mt-28 md:mt-32">
       <div className="container mx-auto px-[180px]">
         <div className="flex items-center justify-between gap-12">
           <div className="flex flex-col items-start justify-center gap-[30px] max-w-[538px]">

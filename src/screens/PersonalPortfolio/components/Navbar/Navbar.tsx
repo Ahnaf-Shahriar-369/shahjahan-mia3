@@ -104,49 +104,41 @@ export default function Navbar({ isVideoPlaying, scrollY }: NavbarProps) {
           flex items-center justify-between px-4 md:px-8 lg:px-[95px]
           transition-all duration-500 ease-out
           ${isScrolled
-                        ? "bg-black/40 shadow-xl shadow-black/30 border border-white/10"
-                        : "bg-black/5 shadow-sm hover:shadow-md"
+                        ? "bg-white/30 shadow-xl shadow-black/10 border border-white/40"
+                        : "bg-white/20 shadow-sm hover:shadow-md border border-white/30"
                     }
         `}
                 style={{ height: `${navbarHeight}px` }}
             >
                 {/* Logo - Mobile */}
-                <div className="flex lg:hidden items-center gap-3 group cursor-pointer">
-                    <div className="relative overflow-hidden rounded-full transition-all duration-500 group-hover:shadow-lg"
+                <div className="flex lg:hidden items-center gap-3 cursor-pointer">
+                    <img
+                        src="/mia.png"
+                        alt="Mia Logo"
+                        width={mobileLogo.width}
+                        height={mobileLogo.height}
+                        className="rounded-full object-cover border-2 border-white/50 shadow-md"
                         style={{
                             transform: `scale(${mobileLogo.scale})`,
                             transformOrigin: 'center'
                         }}
-                    >
-                        <img
-                            src="/mia.png"
-                            alt="Mia Logo"
-                            width={mobileLogo.width}
-                            height={mobileLogo.height}
-                            className="rounded-full object-cover transition-all duration-500 group-hover:scale-110 group-active:scale-95"
-                        />
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                    </div>
+                    />
                 </div>
 
                 {/* Logo - Desktop */}
-                <div className="hidden lg:flex items-center gap-3 group cursor-pointer"
-                    style={{
-                        transform: `scale(${desktopLogo.scale})`,
-                        transformOrigin: 'center',
-                        transition: 'transform 0.5s ease-out'
-                    }}
-                >
-                    <div className="relative overflow-hidden rounded-full transition-all duration-500 group-hover:shadow-lg">
-                        <img
-                            src="/mia.png"
-                            alt="Mia Logo"
-                            width={desktopLogo.width}
-                            height={desktopLogo.height}
-                            className="rounded-full object-cover transition-all duration-500 group-hover:scale-110 group-active:scale-95"
-                        />
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                    </div>
+                <div className="hidden lg:flex items-center gap-3 cursor-pointer">
+                    <img
+                        src="/mia.png"
+                        alt="Mia Logo"
+                        width={desktopLogo.width}
+                        height={desktopLogo.height}
+                        className="rounded-full object-cover border-2 border-white/60 shadow-lg"
+                        style={{
+                            transform: `scale(${desktopLogo.scale})`,
+                            transformOrigin: 'center',
+                            transition: 'transform 0.5s ease-out'
+                        }}
+                    />
                 </div>
 
                 {/* Navigation Links */}
@@ -231,8 +223,8 @@ export default function Navbar({ isVideoPlaying, scrollY }: NavbarProps) {
             <div
                 className={`lg:hidden absolute left-0 right-0 backdrop-blur-md shadow-lg transition-all duration-300 ease-in-out overflow-hidden
           ${isScrolled
-                        ? "top-[60px] bg-black/40 border-t border-white/10"
-                        : "top-[70px] bg-black/5"
+                        ? "top-[60px] bg-white/30 border-t border-white/40"
+                        : "top-[70px] bg-white/20 border-t border-white/30"
                     }
           ${mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}
         `}

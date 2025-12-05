@@ -26,7 +26,7 @@ export default function Contact() {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <img
-                    src="/tang1.png"
+                    src="/tang5.png"
                     alt="Background"
                     className="w-full h-full object-cover object-center"
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -45,10 +45,10 @@ export default function Contact() {
             <div className="relative z-10 max-w-7xl mx-auto w-full">
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-['Inter',sans-serif] drop-shadow-lg">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-sans drop-shadow-lg">
                         Get In Touch
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-white font-['Inter',sans-serif] font-medium drop-shadow-md max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-white font-sans font-medium drop-shadow-md max-w-3xl mx-auto">
                         Ready to start your construction project? Contact us today
                     </p>
                 </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                                         <div className="bg-white/20 p-3 rounded-full">
                                             <Building2 className="w-6 h-6 text-white" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white font-['Inter',sans-serif] drop-shadow-lg">
+                                        <h3 className="text-2xl font-bold text-white font-sans drop-shadow-lg">
                                             Head Office
                                         </h3>
                                     </div>
@@ -80,8 +80,8 @@ export default function Contact() {
                                     <div className="flex items-start gap-3">
                                         <MapPin className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
                                         <div>
-                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Location</p>
-                                            <p className="text-white text-lg font-bold font-['Inter',sans-serif] drop-shadow-lg">Mosjid Road, Tangail</p>
+                                            <p className="text-white/70 text-sm font-sans">Location</p>
+                                            <p className="text-white text-lg font-bold font-sans drop-shadow-lg">Mosjid Road, Tangail</p>
                                         </div>
                                     </div>
 
@@ -93,8 +93,8 @@ export default function Contact() {
                                     >
                                         <Mail className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
                                         <div>
-                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Email</p>
-                                            <p className="text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg break-all">brotherscorporationtangail@yahoo.com</p>
+                                            <p className="text-white/70 text-sm font-sans">Email</p>
+                                            <p className="text-white text-base font-bold font-sans drop-shadow-lg break-all">brotherscorporationtangail@yahoo.com</p>
                                         </div>
                                     </a>
 
@@ -102,13 +102,13 @@ export default function Contact() {
                                     <div className="flex items-start gap-3">
                                         <Phone className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
                                         <div className="flex-1">
-                                            <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
+                                            <p className="text-white/70 text-sm mb-2 font-sans">Phone Numbers</p>
                                             <div className="space-y-1.5">
                                                 {headOfficePhones.map((phone) => (
                                                     <a
                                                         key={phone}
                                                         href={`tel:+88${phone}`}
-                                                        className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
+                                                        className="block text-white text-base font-bold font-sans drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
                                                     >
                                                         {phone}
                                                     </a>
@@ -134,7 +134,7 @@ export default function Contact() {
                                         <div className="bg-white/20 p-3 rounded-full">
                                             <Building2 className="w-6 h-6 text-white" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white font-['Inter',sans-serif] drop-shadow-lg">
+                                        <h3 className="text-2xl font-bold text-white font-sans drop-shadow-lg">
                                             Sales Center Jamalpur
                                         </h3>
                                     </div>
@@ -143,8 +143,8 @@ export default function Contact() {
                                     <div className="flex items-start gap-3">
                                         <MapPin className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
                                         <div>
-                                            <p className="text-white/70 text-sm font-['Inter',sans-serif]">Location</p>
-                                            <p className="text-white text-lg font-bold font-['Inter',sans-serif] drop-shadow-lg">Jamalpur Sadar, Jamalpur</p>
+                                            <p className="text-white/70 text-sm font-sans">Location</p>
+                                            <p className="text-white text-lg font-bold font-sans drop-shadow-lg">Jamalpur Sadar, Jamalpur</p>
                                         </div>
                                     </div>
 
@@ -152,13 +152,13 @@ export default function Contact() {
                                     <div className="flex items-start gap-3">
                                         <Phone className="w-5 h-5 text-white/80 mt-1 flex-shrink-0" />
                                         <div className="flex-1">
-                                            <p className="text-white/70 text-sm mb-2 font-['Inter',sans-serif]">Phone Numbers</p>
+                                            <p className="text-white/70 text-sm mb-2 font-sans">Phone Numbers</p>
                                             <div className="space-y-1.5">
                                                 {salesCenterPhones.map((phone) => (
                                                     <a
                                                         key={phone}
                                                         href={`tel:+88${phone}`}
-                                                        className="block text-white text-base font-bold font-['Inter',sans-serif] drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
+                                                        className="block text-white text-base font-bold font-sans drop-shadow-lg hover:text-emerald-200 transition-colors duration-300"
                                                     >
                                                         {phone}
                                                     </a>
