@@ -98,6 +98,224 @@ const brandHierarchy = [
     }
 ]
 
+// Cement categories data
+const cementCategories = [
+    {
+        name: "MPC",
+        fullName: "Scan Multi Purpose Cement (MPC)",
+        description: "High quality and smart cement produced using latest advanced technology. Strength class 42.5 N, providing higher long age strength.",
+        brands: [
+            { name: "Scan Cement", logo: "/scan-cement.png" }
+        ],
+        packageImage: "/scan-multipurpose.png",
+        features: ["Prevents thermal cracks", "Sulphate resistant", "Environment friendly"],
+        color: "blue"
+    },
+    {
+        name: "PCC Max",
+        fullName: "Scan PCC Max 52.5 N",
+        description: "Bangladesh's first, strongest, and only Portland Composite Cement formulated with a 52.5 MPa strength. 25% stronger than conventional PCC.",
+        brands: [
+            { name: "Scan Cement", logo: "/scan-cement.png" }
+        ],
+        packageImage: "/scan-pcc-max.png",
+        features: ["Strongest PCC (52.5 N)", "20 MPa in 2 days", "BOPP Bag Protection"],
+        color: "emerald"
+    },
+    {
+        name: "OPC",
+        fullName: "Scan Ordinary Portland Cement (OPC)",
+        description: "Produced by grinding clinker with a small amount of gypsum. Ideal for construction projects where fast setting is required.",
+        brands: [
+            { name: "Scan Cement", logo: "/scan-cement.png" }
+        ],
+        packageImage: "/scan-60mpa.png",
+        features: ["Quick setting", "52.5 N strength", "95-100% Clinker"],
+        color: "emerald"
+    },
+    {
+        name: "evoBUILD",
+        fullName: "Scan evoBuild 42.5 N",
+        description: "Bangladesh's first and only Green Cement ensuring 50% carbon reduction. A responsible and powerful choice for modern constructions.",
+        brands: [
+            { name: "Scan Cement", logo: "/scan-cement.png" }
+        ],
+        packageImage: "/scan-evobuild.png",
+        features: ["Green Cement", "50% carbon reduction", "Low heat of hydration"],
+        color: "emerald"
+    }
+]
+
+// Cement Categories Carousel Component
+function CementCategoriesCarousel() {
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+
+    // Auto-advance carousel
+    useEffect(() => {
+        if (!isAutoPlaying) return
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % cementCategories.length)
+        }, 5000)
+
+        return () => clearInterval(interval)
+    }, [currentIndex, isAutoPlaying])
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev + 1) % cementCategories.length)
+        setIsAutoPlaying(false)
+        setTimeout(() => setIsAutoPlaying(true), 10000)
+    }
+
+    const handlePrev = () => {
+        setCurrentIndex((prev) => (prev - 1 + cementCategories.length) % cementCategories.length)
+        setIsAutoPlaying(false)
+        setTimeout(() => setIsAutoPlaying(true), 10000)
+    }
+
+    const currentCategory = cementCategories[currentIndex]
+    const colorClasses = {
+        emerald: "from-emerald-300 via-emerald-200 to-emerald-100",
+        blue: "from-blue-300 via-blue-200 to-blue-100",
+        purple: "from-purple-300 via-purple-200 to-purple-100",
+        pink: "from-pink-300 via-pink-200 to-pink-100",
+        orange: "from-orange-300 via-orange-200 to-orange-100"
+    }
+
+    return (
+        <div className="mt-16 sm:mt-20">
+            <div className="text-center mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-sans drop-shadow-lg">
+                    Scan Cement Categories
+                </h3>
+                <p className="text-white/80 font-sans">Explore our comprehensive range of high-performance cements</p>
+            </div>
+
+            <div className="relative w-fit mx-auto px-4">
+                {/* Carousel Card */}
+                <div className="group relative">
+                    {/* Glow effect */}
+                    <div className={`absolute -inset-0.5 bg-gradient-to-r ${colorClasses[currentCategory.color as keyof typeof colorClasses]} rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500`}></div>
+
+                    {/* Main card */}
+                    <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-3xl p-5 sm:p-6 shadow-2xl shadow-white/20 transition-all duration-500 hover:border-white/40 bg-gradient-to-br from-white/10 to-white/5">
+                        {/* Decorative corners */}
+                        <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-white/40"></div>
+                        <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-white/40"></div>
+
+                        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+                            {/* Left: Package Image - Small and Long */}
+                            <div className="flex-shrink-0">
+                                <div className="relative w-[120px] aspect-[3/4] bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-xl p-3 shadow-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                    <img
+                                        src={currentCategory.packageImage}
+                                        alt={currentCategory.name}
+                                        className="w-full h-full object-contain relative z-10 drop-shadow-md"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Middle & Right: Content */}
+                            <div className="flex-1 min-w-[280px] max-w-sm sm:max-w-md space-y-4">
+                                {/* Header */}
+                                <div>
+                                    <div className="flex items-center gap-2 mb-1.5">
+                                        <span className={`px-3 py-1 bg-gradient-to-r ${colorClasses[currentCategory.color as keyof typeof colorClasses]} rounded-full text-[10px] font-bold text-gray-800 uppercase tracking-wider shadow-md`}>
+                                            {currentCategory.name}
+                                        </span>
+                                    </div>
+                                    <h4 className="text-xl sm:text-2xl font-bold text-white mb-1.5 font-sans drop-shadow-lg">
+                                        {currentCategory.fullName}
+                                    </h4>
+                                    <p className="text-white/80 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                                        {currentCategory.description}
+                                    </p>
+                                </div>
+
+                                {/* Features & Brands Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {/* Features */}
+                                    <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-3">
+                                        <h5 className="text-[10px] text-blue-300 uppercase tracking-wider font-semibold mb-2">Key Features</h5>
+                                        <ul className="space-y-1.5">
+                                            {currentCategory.features.map((feature, idx) => (
+                                                <li key={idx} className="flex items-start gap-1.5">
+                                                    <div className={`w-1.5 h-1.5 bg-gradient-to-r ${colorClasses[currentCategory.color as keyof typeof colorClasses]} rounded-full mt-1 flex-shrink-0`}></div>
+                                                    <span className="text-white/90 text-xs">{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    {/* Available Brands */}
+                                    <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-3">
+                                        <h5 className="text-[10px] text-emerald-300 uppercase tracking-wider font-semibold mb-2">Available Brands</h5>
+                                        <div className="flex flex-wrap gap-2">
+                                            {currentCategory.brands.map((brand, idx) => (
+                                                <div key={idx} className="flex flex-col items-center gap-1">
+                                                    <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-md p-1.5 transition-transform hover:scale-110">
+                                                        <img
+                                                            src={brand.logo}
+                                                            alt={brand.name}
+                                                            className="w-full h-full object-contain"
+                                                        />
+                                                    </div>
+                                                    <span className="text-[10px] text-white/80 font-medium">{brand.name}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Navigation Buttons */}
+                <button
+                    onClick={handlePrev}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-40 p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg"
+                    aria-label="Previous category"
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <button
+                    onClick={handleNext}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-40 p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg"
+                    aria-label="Next category"
+                >
+                    <ChevronRight className="w-5 h-5" />
+                </button>
+
+                {/* Dots Navigation */}
+                <div className="flex justify-center gap-2 mt-8">
+                    {cementCategories.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => {
+                                setCurrentIndex(index)
+                                setIsAutoPlaying(false)
+                                setTimeout(() => setIsAutoPlaying(true), 10000)
+                            }}
+                            className={`
+                                transition-all duration-300 rounded-full
+                                ${index === currentIndex
+                                    ? 'w-8 h-2.5 bg-white shadow-lg shadow-white/50'
+                                    : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
+                                }
+                            `}
+                            aria-label={`Go to ${cementCategories[index].name}`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
 
 export default function Dealerships() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -292,96 +510,8 @@ export default function Dealerships() {
                     ))}
                 </div>
 
-                {/* Scan Cement Highlight Card */}
-                <div className="mt-16 sm:mt-20">
-                    <div className="text-center mb-8">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-sans drop-shadow-lg">
-                            Featured Product
-                        </h3>
-                        <p className="text-white/80 font-sans">Premium quality cement from Heidelberg Materials</p>
-                    </div>
-
-                    <div className="max-w-5xl mx-auto">
-                        <div className="group relative">
-                            {/* Glow effect */}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-
-                            {/* Main card - wider and shorter */}
-                            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-3xl p-8 sm:p-10 shadow-2xl shadow-white/20 transition-all duration-500 hover:border-white/40 hover:shadow-3xl bg-gradient-to-br from-white/10 to-white/5">
-                                {/* Decorative corners */}
-                                <div className="absolute top-6 left-6 w-16 h-16 border-t-2 border-l-2 border-white/40"></div>
-                                <div className="absolute bottom-6 right-6 w-16 h-16 border-b-2 border-r-2 border-white/40"></div>
-
-                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                                    {/* Left: Logo and Brand */}
-                                    <div className="flex flex-col items-center justify-center">
-                                        <div className="relative w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4">
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/30 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
-                                            <img
-                                                src="/scan-cement.png"
-                                                alt="Scan Cement"
-                                                className="w-28 h-28 object-contain relative z-10"
-                                            />
-                                        </div>
-                                        <h4 className="text-2xl font-bold text-white text-center font-sans drop-shadow-lg">
-                                            Scan Cement
-                                        </h4>
-                                        <p className="text-emerald-300 text-sm font-semibold mt-1">by Heidelberg Materials</p>
-                                    </div>
-
-                                    {/* Middle: Categories */}
-                                    <div className="space-y-4">
-                                        <div className="text-center mb-4">
-                                            <span className="text-xs text-blue-300 uppercase tracking-wider font-semibold">Available Categories</span>
-                                        </div>
-
-                                        <div className="space-y-3">
-                                            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300">
-                                                <h5 className="text-white font-bold text-lg mb-1">OPC (Ordinary Portland Cement)</h5>
-                                                <p className="text-white/70 text-sm">Perfect for general construction work</p>
-                                            </div>
-
-                                            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300">
-                                                <h5 className="text-white font-bold text-lg mb-1">PCC (Portland Composite Cement)</h5>
-                                                <p className="text-white/70 text-sm">Ideal for high-strength applications</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Right: Key Features */}
-                                    <div className="space-y-3">
-                                        <div className="text-center mb-4">
-                                            <span className="text-xs text-purple-300 uppercase tracking-wider font-semibold">Key Features</span>
-                                        </div>
-
-                                        <ul className="space-y-2">
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                <span className="text-white/90 text-sm">High compressive strength</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                <span className="text-white/90 text-sm">Superior durability</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                <span className="text-white/90 text-sm">Excellent workability</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                <span className="text-white/90 text-sm">Consistent quality</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                <span className="text-white/90 text-sm">Trusted by professionals</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* Cement Categories Carousel */}
+                <CementCategoriesCarousel />
 
                 {/* Brand Hierarchy Section */}
                 <div className="mt-8 sm:mt-12">

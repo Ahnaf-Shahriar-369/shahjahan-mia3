@@ -56,7 +56,7 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const [currentTitle, setCurrentTitle] = useState("Entrepreneur")
-  const titles = ["Entrepreneur", "Founder", "Community Builder", "Visionary Leader"]
+  const titles = ["Entrepreneur", "Founder", "Doner", "Visionary Leader"]
 
   // Refs for media elements
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -197,7 +197,7 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
           relative z-10 h-full
           flex flex-col lg:flex-row items-center justify-between
           px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24
-          py-12 lg:py-0 gap-8 lg:gap-0
+          pt-24 pb-12 lg:pt-40 lg:pb-0 gap-8 lg:gap-0
         `}
       >
         {/* ===============================================================
@@ -247,21 +247,13 @@ export default function Hero({ onPlayStateChange }: HeroProps = {}) {
             />
 
             {/* Main title section on right */}
-            <div className="flex-1 relative">
-              {/* Construction Materials Supplier - Upper Right */}
-              <div className="absolute top-0 right-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 shadow-lg">
-                <p className="text-[10px] sm:text-xs tracking-widest text-white/90 font-normal drop-shadow-md uppercase whitespace-nowrap">
-                  CONSTRUCTION MATERIALS SUPPLIER®
-                </p>
-              </div>
-
+            <div className="flex-1">
               <h1
                 className={`
                   text-4xl sm:text-5xl md:text-6xl lg:text-7xl
                   font-serif text-white font-bold leading-tight tracking-tight
                   drop-shadow-2xl
                   animate-fadeInUp
-                  mt-8 sm:mt-10
                 `}
               >
                 Md. Shahjahan Miah
