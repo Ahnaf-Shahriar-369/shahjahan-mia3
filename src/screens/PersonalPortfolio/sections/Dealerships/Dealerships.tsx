@@ -9,42 +9,58 @@ const dealerships = [
         shortName: "Heidelberg",
         description: "A leading cement producer in Bangladesh, part of the global Heidelberg Materials group; makes OPC/PCC cement.",
         logo: "/SVG/heidelberg.svg",
-        category: "Cement"
+        category: "Cement",
+        subBrands: [
+            { name: "Scan Cement", logo: "/scan-cement.png" }
+        ]
     },
     {
         title: "LafargeHolcim Cement",
         shortName: "LafargeHolcim",
         description: "Part of the Holcim group (formerly LafargeHolcim); produces high-quality cement for general and large projects, sold through nationwide dealer networks.",
         logo: "/SVG/LafargeHolcim.svg",
-        category: "Cement"
+        category: "Cement",
+        subBrands: [
+            { name: "Holcim", logo: "/holicm-cement.png" }
+        ]
     },
     {
         title: "Seven Rings Cement",
         shortName: "Seven Rings",
         description: "A popular Bangladeshi cement brand from Shun Shing Group; offers OPC/PCC grades used widely in real estate and infrastructure.",
         logo: "/SVG/sevenr-rings.svg",
-        category: "Cement"
+        category: "Cement",
+        subBrands: [
+            { name: "Seven Ring", logo: "/three-ring.png" }
+        ]
     },
     {
         title: "Madina Cement",
         shortName: "Madina",
         description: "Bangladesh-based cement brand supplying standard OPC/PCC cement targeted at residential and commercial construction.",
         logo: "/SVG/madina.svg",
-        category: "Cement"
+        category: "Cement",
+        subBrands: [
+            { name: "Tiger Cement", logo: "/tiger-cement.png" }
+        ]
     },
     {
         title: "Seven Horse Cement",
         shortName: "Seven Horse",
         description: "Local cement brand focused on affordable, reliable Portland cement for everyday building needs.",
         logo: "/SVG/seven-horse.svg",
-        category: "Cement"
+        category: "Cement",
+        subBrands: [
+            { name: "Seven Horse", logo: "/seven-horse.png" }
+        ]
     },
     {
         title: "BSRM Steel",
         shortName: "BSRM",
         description: "Bangladesh Steel Re-Rolling Mills—one of the country's largest steel manufacturers; best known for high-strength rebar and other construction steel products used in major projects.",
         logo: "/SVG/bsrm.svg",
-        category: "Steel"
+        category: "Steel",
+        subBrands: []
     },
 ]
 
@@ -161,19 +177,19 @@ export default function Dealerships() {
                 {/* Carousel Container */}
                 <div className="relative">
                     {/* Cards */}
-                    <div className="relative h-[500px] sm:h-[450px] md:h-[400px] flex items-center justify-center">
+                    <div className="relative h-[600px] sm:h-[550px] md:h-[500px] flex items-center justify-center">
                         {getVisibleCards().map((deal) => (
                             <div
                                 key={deal.index}
                                 className={`
                   absolute transition-all duration-700 ease-out
                   ${deal.position === 0 ? 'z-30 scale-100 opacity-100' : ''}
-                  ${deal.position === -1 ? 'z-20 scale-90 opacity-60 -translate-x-[280px] sm:-translate-x-[320px] md:-translate-x-[380px]' : ''}
-                  ${deal.position === 1 ? 'z-20 scale-90 opacity-60 translate-x-[280px] sm:translate-x-[320px] md:translate-x-[380px]' : ''}
+                  ${deal.position === -1 ? 'z-20 scale-90 opacity-60 -translate-x-[320px] sm:-translate-x-[360px] md:-translate-x-[440px]' : ''}
+                  ${deal.position === 1 ? 'z-20 scale-90 opacity-60 translate-x-[320px] sm:translate-x-[360px] md:translate-x-[440px]' : ''}
                 `}
                             >
                                 {/* Card */}
-                                <div className="group relative w-[280px] sm:w-[320px] md:w-[360px]">
+                                <div className="group relative w-[320px] sm:w-[360px] md:w-[420px]">
                                     {/* Glow effect */}
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-200 via-blue-200 to-purple-200 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
@@ -185,12 +201,12 @@ export default function Dealerships() {
 
                                         {/* Logo container */}
                                         <div className="flex justify-center mb-6">
-                                            <div className="relative w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-full flex items-center justify-center shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
+                                            <div className="relative w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
                                                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                                                 <img
                                                     src={deal.logo}
                                                     alt={deal.title}
-                                                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain relative z-10"
+                                                    className="w-20 h-20 sm:w-24 sm:h-24 object-contain relative z-10"
                                                 />
                                             </div>
                                         </div>
@@ -208,9 +224,32 @@ export default function Dealerships() {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-white text-sm sm:text-base leading-relaxed text-center font-sans font-medium drop-shadow-md line-clamp-4">
+                                        <p className="text-white text-sm sm:text-base leading-relaxed text-center font-sans font-medium drop-shadow-md line-clamp-3 mb-6">
                                             {deal.description}
                                         </p>
+
+                                        {/* Sub-brands */}
+                                        {deal.subBrands && deal.subBrands.length > 0 && (
+                                            <div className="mt-6 pt-6 border-t border-white/10">
+                                                <div className="text-center mb-3">
+                                                    <span className="text-xs text-emerald-300 uppercase tracking-wider font-semibold">Sub-Brands</span>
+                                                </div>
+                                                <div className="flex justify-center gap-3 flex-wrap">
+                                                    {deal.subBrands.map((subBrand: any, idx: number) => (
+                                                        <div key={idx} className="flex flex-col items-center gap-2">
+                                                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md p-2">
+                                                                <img
+                                                                    src={subBrand.logo}
+                                                                    alt={subBrand.name}
+                                                                    className="w-full h-full object-contain"
+                                                                />
+                                                            </div>
+                                                            <span className="text-xs text-white/80 font-medium">{subBrand.name}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -251,6 +290,97 @@ export default function Dealerships() {
                             aria-label={`Go to dealership ${index + 1}`}
                         />
                     ))}
+                </div>
+
+                {/* Scan Cement Highlight Card */}
+                <div className="mt-16 sm:mt-20">
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-sans drop-shadow-lg">
+                            Featured Product
+                        </h3>
+                        <p className="text-white/80 font-sans">Premium quality cement from Heidelberg Materials</p>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto">
+                        <div className="group relative">
+                            {/* Glow effect */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+
+                            {/* Main card - wider and shorter */}
+                            <div className="relative backdrop-blur-sm border-2 border-white/30 rounded-3xl p-8 sm:p-10 shadow-2xl shadow-white/20 transition-all duration-500 hover:border-white/40 hover:shadow-3xl bg-gradient-to-br from-white/10 to-white/5">
+                                {/* Decorative corners */}
+                                <div className="absolute top-6 left-6 w-16 h-16 border-t-2 border-l-2 border-white/40"></div>
+                                <div className="absolute bottom-6 right-6 w-16 h-16 border-b-2 border-r-2 border-white/40"></div>
+
+                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                                    {/* Left: Logo and Brand */}
+                                    <div className="flex flex-col items-center justify-center">
+                                        <div className="relative w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/30 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                                            <img
+                                                src="/scan-cement.png"
+                                                alt="Scan Cement"
+                                                className="w-28 h-28 object-contain relative z-10"
+                                            />
+                                        </div>
+                                        <h4 className="text-2xl font-bold text-white text-center font-sans drop-shadow-lg">
+                                            Scan Cement
+                                        </h4>
+                                        <p className="text-emerald-300 text-sm font-semibold mt-1">by Heidelberg Materials</p>
+                                    </div>
+
+                                    {/* Middle: Categories */}
+                                    <div className="space-y-4">
+                                        <div className="text-center mb-4">
+                                            <span className="text-xs text-blue-300 uppercase tracking-wider font-semibold">Available Categories</span>
+                                        </div>
+
+                                        <div className="space-y-3">
+                                            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300">
+                                                <h5 className="text-white font-bold text-lg mb-1">OPC (Ordinary Portland Cement)</h5>
+                                                <p className="text-white/70 text-sm">Perfect for general construction work</p>
+                                            </div>
+
+                                            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300">
+                                                <h5 className="text-white font-bold text-lg mb-1">PCC (Portland Composite Cement)</h5>
+                                                <p className="text-white/70 text-sm">Ideal for high-strength applications</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Right: Key Features */}
+                                    <div className="space-y-3">
+                                        <div className="text-center mb-4">
+                                            <span className="text-xs text-purple-300 uppercase tracking-wider font-semibold">Key Features</span>
+                                        </div>
+
+                                        <ul className="space-y-2">
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                <span className="text-white/90 text-sm">High compressive strength</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                <span className="text-white/90 text-sm">Superior durability</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                <span className="text-white/90 text-sm">Excellent workability</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                <span className="text-white/90 text-sm">Consistent quality</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                <span className="text-white/90 text-sm">Trusted by professionals</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Brand Hierarchy Section */}
