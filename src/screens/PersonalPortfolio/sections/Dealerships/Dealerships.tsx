@@ -184,7 +184,7 @@ function CementCategoriesCarousel() {
     }
 
     return (
-        <div className="mt-16 sm:mt-20">
+        <div className="mt-16 sm:mt-20 px-4 sm:px-0">
             <div className="text-center mb-8">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-sans drop-shadow-lg">
                     Scan Cement Categories
@@ -192,7 +192,7 @@ function CementCategoriesCarousel() {
                 <p className="text-white/80 font-sans">Explore our comprehensive range of high-performance cements</p>
             </div>
 
-            <div className="relative w-fit mx-auto px-4">
+            <div className="relative w-full max-w-4xl mx-auto">
                 {/* Carousel Card */}
                 <div className="group relative">
                     {/* Glow effect */}
@@ -207,7 +207,7 @@ function CementCategoriesCarousel() {
                         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
                             {/* Left: Package Image - Small and Long */}
                             <div className="flex-shrink-0">
-                                <div className="relative w-[120px] aspect-[3/4] bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-xl p-3 shadow-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                                <div className="relative w-[100px] sm:w-[120px] aspect-[3/4] bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-xl p-3 shadow-xl overflow-hidden transition-transform duration-300 hover:scale-105">
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
                                     <img
                                         src={currentCategory.packageImage}
@@ -218,7 +218,7 @@ function CementCategoriesCarousel() {
                             </div>
 
                             {/* Middle & Right: Content */}
-                            <div className="flex-1 min-w-[280px] max-w-sm sm:max-w-md space-y-4">
+                            <div className="flex-1 w-full space-y-4">
                                 {/* Header */}
                                 <div>
                                     <div className="flex items-center gap-2 mb-1.5">
@@ -229,13 +229,13 @@ function CementCategoriesCarousel() {
                                     <h4 className="text-xl sm:text-2xl font-bold text-white mb-1.5 font-sans drop-shadow-lg">
                                         {currentCategory.fullName}
                                     </h4>
-                                    <p className="text-white/80 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                                    <p className="text-white/80 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-2">
                                         {currentCategory.description}
                                     </p>
                                 </div>
 
                                 {/* Features & Brands Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {/* Features */}
                                     <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-3">
                                         <h5 className="text-[10px] text-blue-300 uppercase tracking-wider font-semibold mb-2">Key Features</h5>
@@ -273,25 +273,25 @@ function CementCategoriesCarousel() {
                     </div>
                 </div>
 
-                {/* Navigation Buttons */}
+                {/* Navigation Buttons - Adjusted for Mobile */}
                 <button
                     onClick={handlePrev}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-40 p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg"
+                    className="absolute left-0 sm:-left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg -ml-3 sm:ml-0"
                     aria-label="Previous category"
                 >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
 
                 <button
                     onClick={handleNext}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-40 p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg"
+                    className="absolute right-0 sm:-right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-3 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-110 active:scale-95 shadow-lg -mr-3 sm:mr-0"
                     aria-label="Next category"
                 >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
 
                 {/* Dots Navigation */}
-                <div className="flex justify-center gap-2 mt-8">
+                <div className="flex justify-center gap-2 mt-6 sm:mt-8">
                     {cementCategories.map((_, index) => (
                         <button
                             key={index}
@@ -303,8 +303,8 @@ function CementCategoriesCarousel() {
                             className={`
                                 transition-all duration-300 rounded-full
                                 ${index === currentIndex
-                                    ? 'w-8 h-2.5 bg-white shadow-lg shadow-white/50'
-                                    : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
+                                    ? 'w-6 sm:w-8 h-2 sm:h-2.5 bg-white shadow-lg shadow-white/50'
+                                    : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/40 hover:bg-white/60'
                                 }
                             `}
                             aria-label={`Go to ${cementCategories[index].name}`}
